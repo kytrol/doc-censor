@@ -1,0 +1,25 @@
+{
+  "name": "doc-censor",
+  "version": "0.0.0",
+  "description": "Technical exercise to remove censored text from a document",
+  "main": "app.js",
+  "scripts": {
+      "lint": "eslint .",
+      "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kytrol/doc-classifier.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kytrol/doc-censor/issues"
+  },
+  "homepage": "https://github.com/kytrol/doc-censor#readme",
+  "devDependencies": {
+    "eslint": "^8.18.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}
