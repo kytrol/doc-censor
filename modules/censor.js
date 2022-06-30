@@ -47,15 +47,10 @@ function slowNextKeywordIndex(text, keywords) {
  * @param  {string}    text       Text to censor
  * @param  {string}    keyword    Censor keyword
  * @param  {number}    prevIndex  Index to start search from
- * @return {Keyword}              Keyword and index
+ * @return {number}               Index of keyword
  */
-function keywordIndex(text, keyword, prevIndex) {
-  const nextIndex = text.toLowerCase().indexOf(keyword, prevIndex);
-
-  return {
-    nextIndex,
-    keyword
-  };
+function nextKeywordIndex(text, keyword, prevIndex) {
+  return text.toLowerCase().indexOf(keyword, prevIndex);
 }
 
 /**
@@ -79,7 +74,7 @@ function replaceAllKeywords(text, keywords) {
 
 module.exports = {
   censorKeyword,
-  keywordIndex,
+  nextKeywordIndex,
   replaceAllKeywords,
   slowNextKeywordIndex
 };

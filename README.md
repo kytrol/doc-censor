@@ -3,7 +3,7 @@ The program will remove given keywords and phrases from document text and insert
 
 ## Installation
 
-Install a compatible version Node.js and npm (recommended Node v16.15.1, npm v8.11.0).
+Install a compatible version of Node.js and npm (recommended Node v16.15.1, npm v8.11.0).
 
 Run `npm install` to install necessary dependencies.
 
@@ -19,6 +19,8 @@ Benchmarks for different implementations contained in `benchmark.js`.
 `modules/censor.js` - Functions for censoring documents.
 
 `modules/keyword.js` - Functions for parsing keyword input.
+
+`util` - Utility for loading and writing `.txt` files.
 
 ## Execution
 Run with `npm start`.
@@ -48,7 +50,7 @@ If larger files are expected, it would be better to switch to an implementation 
 ## Design Decisions
 
 #### Lowercasing Text
-The classified document is lowercased to better catch words or phrases that need to be censored. One implementation is able to preserve the case of the original document while one is not. It is probably desirable for the original case to be preserved.  
+The classified document is lowercased to better catch words or phrases that need to be censored. Two implementations are able to preserve the case of the original document while one is not. It is probably desirable for the original case to be preserved.  
 
 #### Censoring Substrings
 Say a censored word is `what`. For the word `whatever`, the censor would result in `XXXXever`. This could give context as to what the censored word could be. Might be worth considering censoring an entire word if it contains a substring to censor. Though this program does not implement this route.
@@ -56,6 +58,8 @@ Say a censored word is `what`. For the word `whatever`, the censor would result 
 #### Replacement Performance
 There are many ways to replace substrings in a string. The main impact on performance will be how many times the implementation iterates over the classified document.
 
-Implementation 1 is the worst, as the number of iterations is dependent on the number of keyword matches in the document.
+Implementation 1 has a number of iterations is dependent on the number of keyword matches in the document.
 
 Implementation 2 has a number of iterations dependent on the number of keywords passed in.
+
+Implementation 3 has a number of iterations dependent on the number of keywords, but uses the previously found index when initiating another search.
