@@ -4,8 +4,9 @@
   "description": "Technical exercise to remove censored text from a document",
   "main": "app.js",
   "scripts": {
-      "lint": "eslint .",
-      "start": "node app.js"
+    "benchmark": "node benchmark.js",
+    "lint": "eslint .",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
