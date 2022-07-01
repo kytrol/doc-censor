@@ -1,5 +1,3 @@
-const fs = require('fs/promises');
-
 const { loadFile, outputFile } = require('./util');
 const { parseKeywords } = require('./modules/keyword');
 
@@ -17,7 +15,7 @@ const CENSORED_KEYWORDS = `Don't happy “Prussian Blue”, ‘gift of imaginati
  *
  * @return {void}
  */
-async function implementation1() {
+async function implementation1() { // eslint-disable-line no-unused-vars
   try {
     let text = await loadFile();
     const keywords = parseKeywords(CENSORED_KEYWORDS);
@@ -84,6 +82,5 @@ async function implementation3() {
     console.log('Error in implementation3(). ', err);
   }
 }
-
 
 implementation3();

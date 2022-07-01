@@ -58,8 +58,8 @@ function nextKeywordIndex(text, keyword, prevIndex) {
  *
  * NOTE: Does not preserve case of the original text.
  *
- * @param  {String}    text      Text to censor
- * @param  {String[]}  keywords  Censor keywords
+ * @param  {string}    text      Text to censor
+ * @param  {string[]}  keywords  Censor keywords
  * @return {Keyword}             Keyword and index
  */
 function replaceAllKeywords(text, keywords) {

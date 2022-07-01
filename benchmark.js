@@ -20,7 +20,7 @@ const ITERATIONS = 100000;
 async function implementation1() {
   try {
     const start = Date.now();
-    let docText = await loadFile();
+    const docText = await loadFile();
     for (let i = 0; i < ITERATIONS; i++) {
       let text = docText;
       const keywords = parseKeywords(CENSORED_KEYWORDS);
@@ -48,9 +48,8 @@ async function implementation1() {
 async function implementation2() {
   try {
     const start = Date.now();
-    const docText = await loadFile();
+    const text = await loadFile();
     for (let i = 0; i < ITERATIONS; i++) {
-      let text = docText;
       const keywords = parseKeywords(CENSORED_KEYWORDS);
       replaceAllKeywords(text, keywords);
     }
@@ -70,7 +69,7 @@ async function implementation2() {
 async function implementation3() {
   try {
     const start = Date.now();
-    const docText =  await loadFile();
+    const docText = await loadFile();
     for (let i = 0; i < ITERATIONS; i++) {
       let text = docText;
       const keywords = parseKeywords(CENSORED_KEYWORDS);
