@@ -13,6 +13,7 @@ async function loadFile() {
 /**
  * Load a text file to scan for censored keywords.
  *
+ * @param  {string}  text  Text to write to file
  * @return {Promise}
  */
 async function outputFile(text) {
